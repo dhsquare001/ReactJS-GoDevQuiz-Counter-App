@@ -9,14 +9,17 @@ class Counter extends Component {
   }
 
   Decrement() {
-    if (this.state.counter === 0) {
-      this.setState({
-        counter: 0,
-      });
-    } else
+    if (this.state.counter > 0) {
       this.setState({
         counter: this.state.counter - 1,
       });
+    } else {
+      this.setState({
+        counter:
+          (this.state.counter = 0) &
+          alert("No further decrement possible as counter already set to 0"),
+      });
+    }
   }
 
   Reset() {
